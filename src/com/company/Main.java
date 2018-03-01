@@ -14,7 +14,7 @@ import java.util.List;
 
 public class Main {
 
-    static int currentStep = 0;
+    public static int currentStep = 0;
 
     public static void main(String[] args) {
         List<String> inputLines = new ArrayList<>();

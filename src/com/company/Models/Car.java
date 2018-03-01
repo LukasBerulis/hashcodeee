@@ -2,6 +2,7 @@ package com.company.Models;
 
 import com.company.Interfaces.ICar;
 import com.company.Interfaces.Ride;
+import com.company.Main;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,24 +12,18 @@ public class Car implements ICar {
     private List<Ride> rides;
     private Ride currentRide;
     public int index;
-    private int step;
     int rideLength;
     int stepRideSet;
     int stepRideStarted;
 
     public Car(int i) {
         rides = new ArrayList<>();
-        step = 0;
         index = 0;
     }
 
     @Override
     public List<Ride> getRides() {
         return rides;
-    }
-
-    public void step() {
-        step++;
     }
 
     @Override
@@ -39,10 +34,10 @@ public class Car implements ICar {
     @Override
     public void setRide(Ride ride) {
         currentRide = ride;
-        stepRideSet = step;
+        stepRideSet = Main.currentStep;
         rideLength = Math.abs(currentRide.getX() - currentRide.getA())
                 + Math.abs(currentRide.getY() - currentRide.getB());
-        if (step >= ride.getS() + 1) stepRideStarted = step;
+        if (Main.currentStep >= ride.getS() + 1) stepRideStarted = Main.currentStep;
     }
 
     @Override
@@ -66,7 +61,7 @@ public class Car implements ICar {
     @Override
     public int stepsLeft(int t) {
         if (stepRideStarted > 0) {
-            int stepsElapsed = step - stepRideStarted;
+            int stepsElapsed = Main.currentStep - stepRideStarted;
             return rideLength - stepsElapsed;
         }
         return -1;
@@ -75,7 +70,7 @@ public class Car implements ICar {
     @Override
     public boolean isGoing(int t) {
         if (stepRideStarted > 0) {
-            int stepsElapsed = step - stepRideStarted;
+            int stepsElapsed = Main.currentStep - stepRideStarted;
             return stepsElapsed < rideLength;
         }
         return true;
@@ -85,7 +80,7 @@ public class Car implements ICar {
     public boolean isFinished() {
         if (currentRide == null) return true;
         if (stepRideStarted > 0) {
-            int stepsElapsed = step - stepRideStarted;
+            int stepsElapsed = Main.currentStep - stepRideStarted;
             return stepsElapsed >= rideLength;
         }
         return false;
