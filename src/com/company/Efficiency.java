@@ -18,7 +18,7 @@ public class Efficiency {
     {
         int startStep = Main.currentStep;
         int finishStep = ride.getF();
-        int eff = 2;
+       // int eff = 2;
         int xMinus = ride.getA() - car.finish()[0];
         int yMinus = ride.getB() - car.finish()[1];
         int xTravel = ride.getX() - ride.getA();
@@ -27,15 +27,20 @@ public class Efficiency {
         int totalDistDiff = Math.abs(xMinus) + Math.abs(yMinus);
         int totalRideDiff = Math.abs(xTravel) + Math.abs(yTravel);
 
-        if(finishStep - startStep >= totalDistDiff + totalRideDiff){
-            return 999999999;
-        }
-        eff+= totalDistDiff;
-        if(totalDistDiff <= ride.getS() - Main.currentStep){
-            eff-= 2;
-        }
+        int totalRealTimeStepFinnish = startStep + totalDistDiff + totalRideDiff;
+        int Efficiency = finishStep - totalRealTimeStepFinnish;
+        return Efficiency;
 
-             return eff;
+
+//        if(finishStep - startStep >= totalDistDiff + totalRideDiff){
+//            return 999999999;
+//        }
+//        eff+= totalDistDiff;
+//        if(totalDistDiff <= ride.getS() - Main.currentStep){
+//            eff-= 2;
+//        }
+//
+//             return eff;
     }
     public void recalculateEfficiency(){
         this.efficiency = calculateEfficiency(this.car, this.ride);
