@@ -27,4 +27,7 @@ public class Efficiency {
 
              return eff;
     }
+    public void recalculateEfficiency(){
+        this.efficiency = calculateEfficiency(this.car, this.ride);
+    }
 }
