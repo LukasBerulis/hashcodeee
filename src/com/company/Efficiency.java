@@ -28,7 +28,7 @@ public class Efficiency {
         int totalRideDiff = Math.abs(xTravel) + Math.abs(yTravel);
 
         if(finishStep - startStep >= totalDistDiff + totalRideDiff){
-            return Main.R * Main.C;
+            return 999999999;
         }
         eff+= totalDistDiff;
         if(totalDistDiff <= ride.getS() - Main.currentStep){
