@@ -13,6 +13,7 @@ public class Car implements ICar {
     private int step;
     int rideLength;
     int stepRideSet;
+    int stepRideStarted;
 
     public Car() {
         rides = new ArrayList<>();
@@ -32,7 +33,10 @@ public class Car implements ICar {
     @Override
     public void setRide(Ride ride) {
         currentRide = ride;
-
+        stepRideSet = step;
+        rideLength = Math.abs(currentRide.getX() - currentRide.getA())
+                + Math.abs(currentRide.getY() - currentRide.getB());
+        if (step >= ride.getS() + 1) stepRideStarted = step;
     }
 
     @Override
@@ -42,23 +46,47 @@ public class Car implements ICar {
 
     @Override
     public int[] finish() {
-        return new int[2];
+        if (currentRide != null)
+            return new int[]{
+                    currentRide.getX(),
+                    currentRide.getY()
+            };
+        return new int[]{
+                0,
+                0
+        };
     }
 
     @Override
     public int stepsLeft(int t) {
-        return 0;
+        if (stepRideStarted > 0) {
+            int stepsElapsed = step - stepRideStarted;
+            return rideLength - stepsElapsed;
+        }
+        return -1;
     }
 
     @Override
     public boolean isGoing(int t) {
-        return false;
+        if (stepRideStarted > 0) {
+            int stepsElapsed = step - stepRideStarted;
+            return stepsElapsed < rideLength;
+        }
+        return true;
     }
 
     @Override
     public boolean isFinished() {
         step++;
-
+        if (stepRideStarted > 0) {
+            int stepsElapsed = step - stepRideStarted;
+            if (stepsElapsed >= rideLength) {
+                rideLength = 0;
+                stepRideSet = 0;
+                stepRideStarted = 0;
+                return true;
+            }
+        }
         return false;
     }
 }
