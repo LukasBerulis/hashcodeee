@@ -20,7 +20,7 @@ public class Main {
     public static void main(String[] args) {
         List<String> inputLines = new ArrayList<>();
         try {
-            inputLines = Files.readAllLines(Paths.get("a_example.in"), StandardCharsets.UTF_8);
+            inputLines = Files.readAllLines(Paths.get("b_should_be_easy.in"), StandardCharsets.UTF_8);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -81,7 +81,7 @@ public class Main {
             Collections.sort(effs, Comparator.comparingInt(chair -> chair.efficiency));
             for (Efficiency eff : effs)
             {
-                System.out.println(eff.efficiency);
+               // System.out.println(eff.efficiency);
                 if(!eff.ride.hasHadCar && eff.car.isFinished())
                 {
                     cars.get(eff.car.index).addRide(eff.ride);
@@ -89,7 +89,7 @@ public class Main {
                     eff.ride.hasHadCar = true;
                 }
             }
-            System.out.println("------");
+           // System.out.println("------");
             currentStep++;
         }
         for (Car car : cars)
