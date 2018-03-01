@@ -1,7 +1,5 @@
 package com.company.Interfaces;
 
-import com.company.Coordinate;
-
 import java.util.List;
 
 public interface ICar {

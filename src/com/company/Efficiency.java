@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.Interfaces.Ride;
+import com.company.Models.Car;
 
 public class Efficiency {
     Car car;
@@ -13,9 +14,8 @@ public class Efficiency {
         this.efficiency = calculateEfficiency(car, ride);
     }
 
-    public int calculateEfficiency(Car car, Ride ride){
-
-
-
+    public int calculateEfficiency(Car car, Ride ride)
+    {
+             return 0;
     }
 }

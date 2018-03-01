@@ -1,7 +1,6 @@
 package com.company;
 
 import com.company.Interfaces.ICar;
-import com.company.Interfaces.IRide;
 import com.company.Interfaces.Ride;
 import com.company.Models.Car;
 
@@ -45,7 +44,7 @@ public class Main {
 
         for(int i=1; i<inputLines.size(); i++){
             String[] rs = inputLines.get(i).split(" ");
-            rides.add(new Ride(i, Integer.parseInt(rs[0]), Integer.parseInt(rs[1]), Integer.parseInt(rs[2]), Integer.parseInt(rs[3]), Integer.parseInt(rs[4]), Integer.parseInt(rs[5]));
+            rides.add(new Ride(i, Integer.parseInt(rs[0]), Integer.parseInt(rs[1]), Integer.parseInt(rs[2]), Integer.parseInt(rs[3]), Integer.parseInt(rs[4]), Integer.parseInt(rs[5])));
         }
         
         //apskaiciuojam pradinius naudingumus
