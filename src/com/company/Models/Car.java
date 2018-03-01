@@ -10,7 +10,7 @@ public class Car implements ICar {
 
     private List<Ride> rides;
     private Ride currentRide;
-    int index;
+    public int index;
     private int step;
     int rideLength;
     int stepRideSet;
@@ -25,6 +25,10 @@ public class Car implements ICar {
     @Override
     public List<Ride> getRides() {
         return rides;
+    }
+
+    public void step() {
+        step++;
     }
 
     @Override
@@ -79,7 +83,6 @@ public class Car implements ICar {
 
     @Override
     public boolean isFinished() {
-        step++;
         if (stepRideStarted > 0) {
             int stepsElapsed = step - stepRideStarted;
             if (stepsElapsed >= rideLength) {
