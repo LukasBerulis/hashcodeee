@@ -19,7 +19,7 @@ public class Car implements ICar {
 
     public Car(int i) {
         rides = new ArrayList<>();
-        index = 0;
+        index = i;
     }
 
     @Override

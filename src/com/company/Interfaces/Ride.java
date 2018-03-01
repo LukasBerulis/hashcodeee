@@ -8,6 +8,7 @@ public class Ride{
     int y;
     int s;
     int f;
+    public boolean hasHadCar= false;
 
     public Ride(int index, int a, int b, int x, int y, int s, int f)
     {

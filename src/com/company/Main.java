@@ -56,6 +56,7 @@ public class Main {
         for(Car car: cars){
             for(Ride ride: rides)
             {
+               // System.out.println(car.index);
                 effs.add(new Efficiency(car, ride));
             }
         }
@@ -82,14 +83,16 @@ public class Main {
             for (Efficiency eff : effs)
             {
                // System.out.println(eff.efficiency);
+               // System.out.println(eff.car.index);
                 if(!eff.ride.hasHadCar && eff.car.isFinished())
                 {
+                    //System.out.println(eff.car.index);
                     cars.get(eff.car.index).addRide(eff.ride);
                     cars.get(eff.car.index).setRide(eff.ride);
                     eff.ride.hasHadCar = true;
                 }
             }
-           // System.out.println("------");
+            //System.out.println("------");
             currentStep++;
         }
         for (Car car : cars)
