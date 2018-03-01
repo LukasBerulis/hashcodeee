@@ -3,6 +3,7 @@ package com.company;
 import com.company.Interfaces.ICar;
 import com.company.Interfaces.IRide;
 import com.company.Interfaces.Ride;
+import com.company.Models.Car;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -44,7 +45,7 @@ public class Main {
 
         for(int i=1; i<inputLines.size(); i++){
             String[] rs = inputLines.get(i).split(" ");
-            rides.add(new Ride(rs[0], rs[1], rs[2], rs[3], rs[4], rs[5], rs[6]));
+            rides.add(new Ride(i, Integer.parseInt(rs[0]), Integer.parseInt(rs[1]), Integer.parseInt(rs[2]), Integer.parseInt(rs[3]), Integer.parseInt(rs[4]), Integer.parseInt(rs[5]));
         }
         
         //apskaiciuojam pradinius naudingumus
@@ -52,7 +53,7 @@ public class Main {
 
         while(currentStep != T){
             for(Car car: cars){
-                for(Ride ride: ride){
+                for(Ride ride: rides){
 
                 }
             }

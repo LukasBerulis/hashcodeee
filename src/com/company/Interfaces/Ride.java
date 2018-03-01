@@ -9,7 +9,7 @@ public class Ride{
     int s;
     int f;
 
-    public void Ride(int index, int a, int b, int x, int y, int s, int f)
+    public Ride(int index, int a, int b, int x, int y, int s, int f)
     {
         this.index = index;
         this.a = a;
