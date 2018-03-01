@@ -16,6 +16,15 @@ public class Efficiency {
 
     public int calculateEfficiency(Car car, Ride ride)
     {
-             return 0;
+        int eff = 2;
+        int xMinus = ride.getX() - car.finish()[0];
+        int yMinus = ride.getY() - car.finish()[1];
+        int totalDistDiff = Math.abs(xMinus) + Math.abs(yMinus);
+        eff+= totalDistDiff;
+        if(totalDistDiff <= ride.getS() - Main.currentStep){
+            eff-= 2;
+        }
+
+             return eff;
     }
 }
