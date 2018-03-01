@@ -83,14 +83,10 @@ public class Car implements ICar {
 
     @Override
     public boolean isFinished() {
+        if (currentRide == null) return true;
         if (stepRideStarted > 0) {
             int stepsElapsed = step - stepRideStarted;
-            if (stepsElapsed >= rideLength) {
-                rideLength = 0;
-                stepRideSet = 0;
-                stepRideStarted = 0;
-                return true;
-            }
+            return stepsElapsed >= rideLength;
         }
         return false;
     }
