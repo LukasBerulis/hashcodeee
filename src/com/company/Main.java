@@ -14,7 +14,8 @@ import java.util.List;
 
 public class Main {
 
-    public static int currentStep = 0;
+    static int currentStep = 0;
+    static int R, C;
 
     public static void main(String[] args) {
         List<String> inputLines = new ArrayList<>();
@@ -24,7 +25,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        int R, C;
+
         int F; //vehicles
         int N; //rides
         int bonus;
