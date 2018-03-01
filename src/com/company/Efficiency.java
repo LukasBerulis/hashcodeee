@@ -28,7 +28,8 @@ public class Efficiency {
         int totalRideDiff = Math.abs(xTravel) + Math.abs(yTravel);
 
         int totalRealTimeStepFinnish = startStep + totalDistDiff + totalRideDiff;
-        int Efficiency = finishStep - totalRealTimeStepFinnish;
+        int TimeDelay = ride.getS() - totalDistDiff;
+        int Efficiency = finishStep - totalRealTimeStepFinnish - TimeDelay;
         return Efficiency;
 
 
