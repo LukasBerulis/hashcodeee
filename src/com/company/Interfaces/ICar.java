@@ -5,11 +5,11 @@ import com.company.Coordinate;
 import java.util.List;
 
 public interface ICar {
-    List<IRide> getRides();
-    void addRide(IRide ride); //rezultatai
+    List<Ride> getRides();
+    void addRide(Ride ride); //rezultatai
 
-    void setRide(IRide ride); //dabartinis
-    IRide getRide();
+    void setRide(Ride ride); //dabartinis
+    Ride getRide();
     int[] finish(); //kordinate paskutines stoteles
 
     int stepsLeft(int t);
