@@ -10,14 +10,16 @@ public class Car implements ICar {
 
     private List<Ride> rides;
     private Ride currentRide;
+    int index;
     private int step;
     int rideLength;
     int stepRideSet;
     int stepRideStarted;
 
-    public Car() {
+    public Car(int i) {
         rides = new ArrayList<>();
         step = 0;
+        index = 0;
     }
 
     @Override
