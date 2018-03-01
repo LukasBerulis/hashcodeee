@@ -9,8 +9,8 @@ public interface ICar {
     void addRide(IRide ride); //rezultatai
 
     void setRide(IRide ride); //dabartinis
+    IRide getRide();
     int[] finish(); //kordinate paskutines stoteles
-
 
     int stepsLeft(int t);
     boolean isGoing(int t);
