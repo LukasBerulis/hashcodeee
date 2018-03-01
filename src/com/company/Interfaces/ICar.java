@@ -14,5 +14,5 @@ public interface ICar {
 
     int stepsLeft(int t);
     boolean isGoing(int t);
-    boolean isFinished(int t);
+    boolean isFinished();
 }
